@@ -10,4 +10,9 @@ public class OnClick : MonoBehaviour {
         Application.LoadLevel(level);
     }
 
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
 }
