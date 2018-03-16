@@ -49,6 +49,6 @@ public class PlayerMove : MonoBehaviour
         {
             print("Freeze");
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
-        }   
+        }
     }
 }
