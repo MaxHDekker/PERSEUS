@@ -2,23 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
 
     private float _moveSpeed = 3;
 
-    // Use this for initialization
-    
-    private float axisThreshHold = 0.2f;
-    
 
-	void Start () {
-       
-    }
-	
-	// Update is called once per frame
-	void Update ()
+    private float axisThreshHold = 0.2f;
+
+
+    void Update()
     {
-        
         Vector3 movement = new Vector3();
 
         //Move left
@@ -43,5 +37,19 @@ public class PlayerMovement : MonoBehaviour {
         }
         movement.Normalize();
         this.transform.position += (movement * Time.deltaTime * _moveSpeed);
+
+        //FREEZE THE Y POSITION
+        if (!GetComponent<PlayerAlAttacks>().freezePos)
+        {
+            print("no freeze");
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+        }
+        else if (GetComponent<PlayerAlAttacks>().freezePos)
+        {
+                    print("Freeze");
+                    GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+        }
     }
-}
+ }
+
