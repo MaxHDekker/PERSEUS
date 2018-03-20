@@ -13,12 +13,17 @@ public class PlayerHelmet : MonoBehaviour
         rend = GetComponent<Renderer>();
         rend.material = normalMat;
     }
-    void Update()
+    public void fade()
     {
-        if (Input.GetKey("0"))
+        if (Input.GetKeyDown("4"))
         {
-            StartCoroutine(ColorFadeGone());
-            StopCoroutine(ColorFadeGone());
+            StopCoroutine(GetComponent<PlayerHelmet>().ColorFadeGone());
+            StartCoroutine(GetComponent<PlayerHelmet>().ColorFadeBack());
+        }
+        if (Input.GetKeyDown("0"))  
+        {
+            StartCoroutine(GetComponent<PlayerHelmet>().ColorFadeGone());
+            StopCoroutine(GetComponent<PlayerHelmet>().ColorFadeBack());
         }
     }
 
@@ -29,7 +34,7 @@ public class PlayerHelmet : MonoBehaviour
         {
             change += duration * Time.deltaTime;
 
-            rend.material.Lerp(fadeMat, normalMat, change);
+            rend.material.Lerp(normalMat, fadeMat, change);
             yield return null;
         }
         
@@ -45,7 +50,7 @@ public class PlayerHelmet : MonoBehaviour
             change += duration * Time.deltaTime;
             
 
-            rend.material.Lerp(normalMat, fadeMat, change);
+            rend.material.Lerp(fadeMat, normalMat, change);
             yield return null;
         }
     }

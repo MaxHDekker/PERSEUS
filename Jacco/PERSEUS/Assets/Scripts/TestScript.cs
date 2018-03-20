@@ -9,11 +9,10 @@ public class TestScript : MonoBehaviour {
 
     void Update()
     {
-        Vector3 movement = new Vector3();
+    
+        {
 
-        movement -= transform.forward;
-        this.transform.position += (movement * Time.deltaTime * moveSpeed);
-        transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
+        }
     }
 }
 

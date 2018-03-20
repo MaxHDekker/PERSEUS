@@ -57,23 +57,14 @@ public class PlayerAlAttacks : MonoBehaviour
         }
         if (_attackHelmet)
         {
-            StopCoroutine(GetComponent<PlayerHelmet>().ColorFadeGone());
-            attackHelmet.GetComponent<PlayerHelmet>().ColorFadeBack();
-            StartCoroutine(GetComponent<PlayerHelmet>().ColorFadeBack());
+            attackHelmet.fade();
            
             if (Input.GetKeyDown("0"))
-
             {
-                StartCoroutine(GetComponent<PlayerHelmet>().ColorFadeGone());
-                StopCoroutine(GetComponent<PlayerHelmet>().ColorFadeBack());
-              
-              
-                
-                attackHelmet.GetComponent<PlayerHelmet>().ColorFadeGone();
-                
                 _attackHelmet = false;
                 print("fadeback");
             }
         }
+      
     }
 }
