@@ -20,7 +20,7 @@ public class PlayerHelmet : MonoBehaviour
             StopCoroutine(GetComponent<PlayerHelmet>().ColorFadeGone());
             StartCoroutine(GetComponent<PlayerHelmet>().ColorFadeBack());
         }
-        if (Input.GetKeyDown("0"))  
+        if (Input.GetKeyDown("0"))
         {
             StartCoroutine(GetComponent<PlayerHelmet>().ColorFadeGone());
             StopCoroutine(GetComponent<PlayerHelmet>().ColorFadeBack());
@@ -37,7 +37,7 @@ public class PlayerHelmet : MonoBehaviour
             rend.material.Lerp(normalMat, fadeMat, change);
             yield return null;
         }
-        
+
     }
     public IEnumerator ColorFadeGone()
     {
@@ -48,7 +48,7 @@ public class PlayerHelmet : MonoBehaviour
         while (change <= 2.0f)
         {
             change += duration * Time.deltaTime;
-            
+
 
             rend.material.Lerp(fadeMat, normalMat, change);
             yield return null;

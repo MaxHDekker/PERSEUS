@@ -6,7 +6,7 @@ public class PlayerAlAttacks : MonoBehaviour
 {
 
     public PlayerBoots attackBoots;
-   // public PlayerBow attackBow;
+    // public PlayerBow attackBow;
     public PlayerHelmet attackHelmet;
 
     public bool freezePos = false;
@@ -25,7 +25,7 @@ public class PlayerAlAttacks : MonoBehaviour
 
     void Update()
     {
-     
+
         //ATTACK BOOTS
         if (Input.GetKeyDown("3"))
         {
@@ -58,13 +58,13 @@ public class PlayerAlAttacks : MonoBehaviour
         if (_attackHelmet)
         {
             attackHelmet.fade();
-           
+
             if (Input.GetKeyDown("0"))
             {
                 _attackHelmet = false;
                 print("fadeback");
             }
         }
-      
+
     }
 }

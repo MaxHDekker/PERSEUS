@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         {
             movement -= transform.forward;
         }
-
+        //move up
         if (Input.GetAxis("Vertical") > axisThreshHold)
         {
             movement += transform.forward;
@@ -47,9 +47,9 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (GetComponent<PlayerAlAttacks>().freezePos)
         {
-                    print("Freeze");
-                    GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+            print("Freeze");
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         }
     }
- }
+}
 
