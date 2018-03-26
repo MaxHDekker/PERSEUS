@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes - kopie/StartMenu.unity
+    guid: 24720c5479d3b87498e52790e437a94b
+  - enabled: 1
+    path: Assets/Main.unity
+    guid: 9c14e154adf8a4d46892f3e8e6a465a1
+  - enabled: 1
+    path: Assets/Scenes - kopie/Controls.unity
+    guid: 3b9aed84e77294540a85c762ea47fa1c
+  - enabled: 1
+    path: Assets/Scenes - kopie/Options.unity
+    guid: 6d51846e90d24884ab261d317e1744c9

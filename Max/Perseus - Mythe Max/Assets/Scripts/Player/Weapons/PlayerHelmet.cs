@@ -13,9 +13,20 @@ public class PlayerHelmet : MonoBehaviour
         rend = GetComponent<Renderer>();
         rend.material = normalMat;
     }
-    void Update()
+    public void fade()
     {
+        if (Input.GetKeyDown("4"))
+        {
+            StopCoroutine(GetComponent<PlayerHelmet>().ColorFadeGone());
+            StartCoroutine(GetComponent<PlayerHelmet>().ColorFadeBack());
+        }
+        if (Input.GetKeyDown("0"))
+        {
+            StartCoroutine(GetComponent<PlayerHelmet>().ColorFadeGone());
+            StopCoroutine(GetComponent<PlayerHelmet>().ColorFadeBack());
+        }
     }
+
     public IEnumerator ColorFadeBack()
     {
         float change = 0.0f;
@@ -42,4 +53,5 @@ public class PlayerHelmet : MonoBehaviour
             yield return null;
         }
     }
+
 }

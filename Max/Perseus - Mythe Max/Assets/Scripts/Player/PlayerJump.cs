@@ -4,48 +4,32 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
-
-    [SerializeField]
-    public float jumpForce = 12f;
-    public float jumpMultiplier = 3f;
-    public float lowJumpMultiplier = 5f;
-
-
-    public bool _grounded = false;
+    public bool isGrounded = true;
     private Rigidbody rb;
+    public float jumpHeight;
 
-    void Awake()
+
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-
-    void Update()
+    void OnCollisionEnter(Collision other)
     {
-        if (Input.GetKey("space") && _grounded == true)
+        if (other.gameObject.tag == "ground")
         {
-            rb.velocity += Vector3.up * jumpForce;
-            _grounded = false;
-        }
-        if (rb.velocity.y < 0)
-        {
-            rb.velocity += Vector3.up * Physics.gravity.y * (jumpMultiplier - 1) * Time.deltaTime;
-        }
-        else if (rb.velocity.y > 0 && !Input.GetKey("space"))
-        {
-            rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            isGrounded = true;
         }
     }
 
-    void OnCollisionEnter(Collision coll)
+    void Update()
     {
-        if (coll.gameObject.tag == "ground")
+        if (isGrounded && Input.GetKeyDown("space") || isGrounded && Input.GetButton("Joystick 1 Button 0")) 
         {
-            _grounded = true;
+            rb.velocity = new Vector3(0, 10 * jumpHeight * Time.deltaTime, 0);
+            isGrounded = false;
         }
-        else
-        {
-            return;
-        }
+
+
     }
 }

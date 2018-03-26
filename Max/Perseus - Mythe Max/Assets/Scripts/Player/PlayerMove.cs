@@ -5,39 +5,40 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
-    private float _moveSpeed = 3;
-
-
-    private float axisThreshHold = 0.2f;
+    public float movementSpeed;
 
 
     void Update()
     {
-        Vector3 movement = new Vector3();
+        FreezeTheY();
+        ControllPlayer();
+    }
 
-        //Move left
-        if (Input.GetAxis("Horizontal") < -axisThreshHold)
-        {
-            movement -= transform.right;
-        }
-        //move right
-        if (Input.GetAxis("Horizontal") > axisThreshHold)
-        {
-            movement += transform.right;
-        }
-        //move down
-        if (Input.GetAxis("Vertical") < -axisThreshHold)
-        {
-            movement -= transform.forward;
-        }
 
-        if (Input.GetAxis("Vertical") > axisThreshHold)
-        {
-            movement += transform.forward;
-        }
-        movement.Normalize();
-        this.transform.position += (movement * Time.deltaTime * _moveSpeed);
+    void ControllPlayer()
+    {
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
 
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        transform.rotation = Quaternion.LookRotation(movement);
+
+
+        transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("sprint"))
+        {
+            movementSpeed *= 1.5f;
+            print("sprint");
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetButtonUp("sprint"))
+        {
+            movementSpeed /= 1.5f;
+        }
+    }
+
+    void FreezeTheY()
+    {
         //FREEZE THE Y POSITION
         if (!GetComponent<PlayerAllAttacks>().freezePos)
         {
