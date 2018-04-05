@@ -4,42 +4,49 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-
-    public float movementSpeed;
-
+    [SerializeField]
+    private float _normalSpeed;
+    [SerializeField]
+    private float _sprintSpeed;
+    [SerializeField]
+    private float movementSpeed;
 
     void Update()
     {
-        FreezeTheY();
         ControllPlayer();
+        FreezeTheY();
     }
 
 
     void ControllPlayer()
     {
+        //Movement + Rotation   
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
-
+         
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        transform.rotation = Quaternion.LookRotation(movement);
-
 
         transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("sprint"))
+        if (movement != Vector3.zero)
         {
-            movementSpeed *= 1.5f;
-            print("sprint");
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15F);
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetButtonUp("sprint"))
+
+        //Sprint
+        if ((Input.GetAxis("sprint") >= 0.5f))
         {
-            movementSpeed /= 1.5f;
+            movementSpeed = _sprintSpeed;
+        }
+        if ((Input.GetAxis("sprint") <= 0.5f))
+        {
+            movementSpeed = _normalSpeed;
         }
     }
 
     void FreezeTheY()
     {
-        //FREEZE THE Y POSITION
+        //Freeze the Y position
         if (!GetComponent<PlayerAllAttacks>().freezePos)
         {
             print("no freeze");

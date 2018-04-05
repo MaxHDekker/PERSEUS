@@ -1,0 +1,216 @@
+fileFormatVersion: 2
+guid: 843063aa5a559f6479c3b91ce5cf6fe0
+timeCreated: 1522160403
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: joint12
+    100002: joint13
+    100004: joint14
+    100006: joint15
+    100008: joint16
+    100010: joint23
+    100012: joint24
+    100014: joint27
+    100016: joint28
+    100018: joint29
+    100020: joint30
+    100022: joint31
+    100024: joint32
+    100026: joint33
+    100028: joint34
+    100030: joint35
+    100032: joint36
+    100034: joint37
+    100036: joint38
+    100038: joint39
+    100040: joint40
+    100042: joint41
+    100044: joint42
+    100046: joint43
+    100048: joint44
+    100050: joint45
+    100052: joint46
+    100054: joint47
+    100056: joint48
+    100058: joint49
+    100060: joint50
+    100062: joint51
+    100064: joint52
+    100066: joint53
+    100068: joint54
+    100070: joint55
+    100072: joint56
+    100074: joint57
+    100076: joint58
+    100078: joint59
+    100080: joint60
+    100082: joint61
+    100084: joint62
+    100086: joint63
+    100088: joint64
+    100090: joint65
+    100092: joint66
+    100094: joint67
+    100096: joint68
+    100098: joint69
+    100100: joint70
+    100102: joint71
+    100104: joint72
+    100106: joint73
+    100108: joint74
+    100110: joint75
+    100112: joint76
+    100114: joint77
+    100116: joint78
+    100118: joint79
+    100120: Medusa
+    100122: //RootNode
+    400000: joint12
+    400002: joint13
+    400004: joint14
+    400006: joint15
+    400008: joint16
+    400010: joint23
+    400012: joint24
+    400014: joint27
+    400016: joint28
+    400018: joint29
+    400020: joint30
+    400022: joint31
+    400024: joint32
+    400026: joint33
+    400028: joint34
+    400030: joint35
+    400032: joint36
+    400034: joint37
+    400036: joint38
+    400038: joint39
+    400040: joint40
+    400042: joint41
+    400044: joint42
+    400046: joint43
+    400048: joint44
+    400050: joint45
+    400052: joint46
+    400054: joint47
+    400056: joint48
+    400058: joint49
+    400060: joint50
+    400062: joint51
+    400064: joint52
+    400066: joint53
+    400068: joint54
+    400070: joint55
+    400072: joint56
+    400074: joint57
+    400076: joint58
+    400078: joint59
+    400080: joint60
+    400082: joint61
+    400084: joint62
+    400086: joint63
+    400088: joint64
+    400090: joint65
+    400092: joint66
+    400094: joint67
+    400096: joint68
+    400098: joint69
+    400100: joint70
+    400102: joint71
+    400104: joint72
+    400106: joint73
+    400108: joint74
+    400110: joint75
+    400112: joint76
+    400114: joint77
+    400116: joint78
+    400118: joint79
+    400120: Medusa
+    400122: //RootNode
+    2100000: lambert3
+    4300000: Medusa
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Medusa
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
